@@ -7,19 +7,13 @@
 import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 
 export default defineConfig({
-  // Disable Cloudflare Workers build target so we get a portable static output
-  // suitable for Netlify (and any static host).
   cloudflare: false,
   tanstackStart: {
-    // Build a static SPA shell (dist/client/index.html) + prerender all
-    // component routes. Netlify serves the static files and falls back to
-    // index.html for client-side routing via netlify.toml.
     spa: {
       enabled: true,
-    },
-    prerender: {
-      enabled: true,
-      autoStaticPathsDiscovery: true,
+      prerender: {
+        outputPath: "/index",
+      },
     },
   },
 });

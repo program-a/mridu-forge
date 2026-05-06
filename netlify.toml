@@ -1,0 +1,10 @@
+[build]
+  command = "bun run build"
+  publish = "dist/client"
+
+# SPA fallback — every unknown path serves the prerendered shell so
+# TanStack Router can take over on the client.
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

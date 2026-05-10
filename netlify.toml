@@ -1,6 +1,10 @@
 [build]
-  command = "bun run build"
+  command = "npm ci && npm run build"
   publish = "dist/client"
+
+[build.environment]
+  NPM_FLAGS = "--include=dev"
+  NODE_VERSION = "20"
 
 # SPA fallback — every unknown path serves the prerendered shell so
 # TanStack Router can take over on the client.

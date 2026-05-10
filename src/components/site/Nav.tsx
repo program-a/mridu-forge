@@ -28,14 +28,27 @@ export function Nav() {
       }`}
     >
       <div className="mx-auto max-w-[1400px] px-6 md:px-10 flex items-center justify-between">
-        <a href="#home" className="flex items-center gap-3 group">
-          <div className="relative h-9 w-9 rounded-md border border-hairline overflow-hidden grid place-items-center bg-charcoal">
-            <span className="text-electric font-display font-bold text-lg leading-none">M</span>
-            <span className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-[var(--electric)] to-transparent" />
+        <a
+          href="#home"
+          aria-label="Mridu Industries — Home"
+          className="flex items-center gap-3 group"
+        >
+          <div className="bg-white rounded-md overflow-hidden ring-1 ring-hairline group-hover:ring-electric/40 transition-shadow">
+            <img
+              src="/mridhu.jpeg"
+              alt="Mridu Industries"
+              className="block h-8 md:h-9 w-auto px-2 py-1.5"
+              width={774}
+              height={245}
+            />
           </div>
-          <div className="leading-tight">
-            <div className="font-display font-semibold tracking-tight text-base">MRIDU</div>
-            <div className="text-[10px] tracking-[0.3em] text-muted-foreground">INDUSTRIES</div>
+          <div className="hidden sm:block leading-tight border-l border-hairline pl-3">
+            <div className="font-display font-semibold tracking-[0.3em] text-[10px] text-muted-foreground">
+              INDUSTRIES
+            </div>
+            <div className="font-display tracking-[0.3em] text-[9px] text-muted-foreground/60 mt-0.5">
+              BHIWADI · RAJASTHAN
+            </div>
           </div>
         </a>
 

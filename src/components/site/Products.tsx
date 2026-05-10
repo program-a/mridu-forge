@@ -1,29 +1,25 @@
 import { Reveal } from "./Reveal";
-import agImg from "@/assets/product-agricultural.jpg";
-import plImg from "@/assets/product-plumbing.jpg";
-import ftImg from "@/assets/product-fittings.jpg";
-import csImg from "@/assets/product-custom.jpg";
 
 const products = [
   {
     id: "01",
     title: "Agricultural pipes for irrigation and water management",
-    img: agImg,
+    img: "/pipes-2.jpeg",
   },
   {
     id: "02",
     title: "Plumbing pipes for residential and commercial use",
-    img: plImg,
+    img: "/pipes-2.jpeg",
   },
   {
     id: "03",
     title: "Durable PVC fittings for secure and leak-proof connections",
-    img: ftImg,
+    img: "/pipes-2.jpeg",
   },
   {
     id: "04",
     title: "Custom solutions tailored to specific project requirements",
-    img: csImg,
+    img: "/pipes-2.jpeg",
   },
 ];
 
@@ -67,6 +63,19 @@ export function Products() {
             All our products are manufactured using high-grade raw materials and are tested to
             ensure strength, durability, and performance.
           </p>
+        </Reveal>
+
+        <Reveal delay={0.45}>
+          <div className="mt-20 overflow-hidden rounded-2xl border border-hairline bg-graphite">
+            <img
+              src="/banner.jpeg"
+              alt="Mridu Industries PVC pipes and fittings product banner"
+              loading="lazy"
+              className="w-full object-cover"
+              width={1024}
+              height={714}
+            />
+          </div>
         </Reveal>
       </div>
     </section>

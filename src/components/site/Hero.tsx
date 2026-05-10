@@ -1,6 +1,5 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
-import heroImg from "@/assets/hero-pipes.jpg";
 
 export function Hero() {
   const ref = useRef<HTMLDivElement>(null);
@@ -17,9 +16,9 @@ export function Hero() {
     >
       <motion.div style={{ scale, y }} className="absolute inset-0">
         <img
-          src={heroImg}
-          alt="Mridu Industries PVC pipe manufacturing facility"
-          className="h-full w-full object-cover opacity-50"
+          src="/pipes.jpeg"
+          alt="Mridu Industries branded PVC pipes"
+          className="h-full w-full object-cover opacity-60"
           width={1920}
           height={1080}
         />

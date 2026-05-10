@@ -1,9 +1,18 @@
 /**
  * Centralized site-wide SEO constants.
- * Update SITE_URL once the production domain is finalized.
+ *
+ * Social crawlers require absolute image URLs. On Netlify, set VITE_SITE_URL
+ * to the live domain (for example: https://mriduindustries.com). If it is not
+ * set, we fall back to Netlify's URL env vars during prerender and then to the
+ * production domain.
  */
 
-export const SITE_URL = "https://mriduindustries.com";
+const rawSiteUrl =
+  import.meta.env.VITE_SITE_URL ||
+  (typeof process !== "undefined" ? process.env.URL || process.env.DEPLOY_PRIME_URL : undefined) ||
+  "https://mriduindustries.com";
+
+export const SITE_URL = rawSiteUrl.replace(/\/+$/, "");
 
 export const SITE_NAME = "Mridu Industries";
 export const SITE_TAGLINE = "Strength in Every Connection";
@@ -42,7 +51,7 @@ export const ORG = {
   geo: { lat: 28.2095, lng: 76.8634 },
 } as const;
 
-export const OG_IMAGE = `${SITE_URL}/banner.jpeg`;
+export const OG_IMAGE = `${SITE_URL}/og-image.jpg`;
 export const OG_IMAGE_ALT =
   "Mridu Industries — premium PVC pipes & fittings · Strength · Reliability · Trust";
 export const LOGO_IMAGE = `${SITE_URL}/mridhu.jpeg`;

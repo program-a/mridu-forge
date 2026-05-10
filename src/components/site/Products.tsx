@@ -1,25 +1,24 @@
 import { Reveal } from "./Reveal";
 
+/** Alternating product imagery for the Our Products grid (same two assets, rotated by card index). */
+const PRODUCT_IMAGES = ["/pipes.jpeg", "/pipes-2.jpeg"] as const;
+
 const products = [
   {
     id: "01",
     title: "Agricultural pipes for irrigation and water management",
-    img: "/pipes-2.jpeg",
   },
   {
     id: "02",
     title: "Plumbing pipes for residential and commercial use",
-    img: "/pipes-2.jpeg",
   },
   {
     id: "03",
     title: "Durable PVC fittings for secure and leak-proof connections",
-    img: "/pipes-2.jpeg",
   },
   {
     id: "04",
     title: "Custom solutions tailored to specific project requirements",
-    img: "/pipes-2.jpeg",
   },
 ];
 
@@ -53,7 +52,10 @@ export function Products() {
         <div className="mt-20 grid grid-cols-1 md:grid-cols-2 gap-6">
           {products.map((p, i) => (
             <Reveal key={p.id} delay={i * 0.07}>
-              <ProductCard p={p} />
+              <ProductCard
+                p={p}
+                imageSrc={PRODUCT_IMAGES[i % PRODUCT_IMAGES.length]}
+              />
             </Reveal>
           ))}
         </div>
@@ -87,14 +89,20 @@ export function Products() {
   );
 }
 
-function ProductCard({ p }: { p: (typeof products)[number] }) {
+function ProductCard({
+  p,
+  imageSrc,
+}: {
+  p: (typeof products)[number];
+  imageSrc: (typeof PRODUCT_IMAGES)[number];
+}) {
   return (
     <article
       aria-labelledby={`product-${p.id}`}
       className="group relative overflow-hidden rounded-2xl border border-hairline bg-graphite aspect-[4/3]"
     >
       <img
-        src={p.img}
+        src={imageSrc}
         alt={`Mridu Industries — ${p.title}`}
         loading="lazy"
         decoding="async"

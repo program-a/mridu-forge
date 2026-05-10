@@ -1,7 +1,7 @@
 import { Reveal } from "./Reveal";
 
 /** Alternating product imagery for the Our Products grid (same two assets, rotated by card index). */
-const PRODUCT_IMAGES = ["/pipes.jpeg", "/pipes-2.jpeg"] as const;
+const PRODUCT_IMAGES = ["/pipes-2.jpeg", "/pipes.jpeg" , "/pipes-3.png", "/pipes-4.png"] as const;
 
 const products = [
   {
@@ -54,7 +54,7 @@ export function Products() {
             <Reveal key={p.id} delay={i * 0.07}>
               <ProductCard
                 p={p}
-                imageSrc={PRODUCT_IMAGES[i % PRODUCT_IMAGES.length]}
+                imageSrc={PRODUCT_IMAGES[i]}
               />
             </Reveal>
           ))}

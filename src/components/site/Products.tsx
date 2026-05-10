@@ -66,16 +66,21 @@ export function Products() {
         </Reveal>
 
         <Reveal delay={0.45}>
-          <div className="mt-20 overflow-hidden rounded-2xl border border-hairline bg-graphite">
+          <figure className="mt-20 overflow-hidden rounded-2xl border border-hairline bg-graphite">
             <img
               src="/banner.jpeg"
-              alt="Mridu Industries PVC pipes and fittings product banner"
+              alt="Mridu Industries — Premium PVC pipes & fittings · Strength · Reliability · Trust · Piping solutions for a stronger India"
               loading="lazy"
+              decoding="async"
               className="w-full object-cover"
               width={1024}
               height={714}
             />
-          </div>
+            <figcaption className="sr-only">
+              Mridu Industries product range — PVC pipes and fittings for agriculture and
+              construction.
+            </figcaption>
+          </figure>
         </Reveal>
       </div>
     </section>
@@ -84,11 +89,17 @@ export function Products() {
 
 function ProductCard({ p }: { p: (typeof products)[number] }) {
   return (
-    <div className="group relative overflow-hidden rounded-2xl border border-hairline bg-graphite aspect-[4/3]">
+    <article
+      aria-labelledby={`product-${p.id}`}
+      className="group relative overflow-hidden rounded-2xl border border-hairline bg-graphite aspect-[4/3]"
+    >
       <img
         src={p.img}
-        alt={p.title}
+        alt={`Mridu Industries — ${p.title}`}
         loading="lazy"
+        decoding="async"
+        width={1024}
+        height={768}
         className="absolute inset-0 h-full w-full object-cover opacity-60 group-hover:opacity-80 group-hover:scale-105 transition-all duration-[1.5s] ease-out"
       />
       <div className="absolute inset-0 bg-gradient-to-t from-graphite via-graphite/50 to-transparent" />
@@ -96,10 +107,13 @@ function ProductCard({ p }: { p: (typeof products)[number] }) {
         <span className="text-[10px] tracking-[0.4em] text-muted-foreground">{p.id}</span>
       </div>
       <div className="absolute bottom-0 inset-x-0 p-6 md:p-8">
-        <h3 className="font-display text-2xl md:text-3xl tracking-tight leading-tight">
+        <h3
+          id={`product-${p.id}`}
+          className="font-display text-2xl md:text-3xl tracking-tight leading-tight"
+        >
           {p.title}
         </h3>
       </div>
-    </div>
+    </article>
   );
 }

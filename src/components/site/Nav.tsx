@@ -36,7 +36,9 @@ export function Nav() {
           <div className="bg-white rounded-md overflow-hidden ring-1 ring-hairline group-hover:ring-electric/40 transition-shadow">
             <img
               src="/mridhu.jpeg"
-              alt="Mridu Industries"
+              alt="Mridu Industries logo"
+              fetchPriority="high"
+              decoding="async"
               className="block h-8 md:h-9 w-auto px-2 py-1.5"
               width={774}
               height={245}
@@ -52,7 +54,7 @@ export function Nav() {
           </div>
         </a>
 
-        <nav className="hidden lg:flex items-center gap-0.5">
+        <nav aria-label="Primary" className="hidden lg:flex items-center gap-0.5">
           {links.map((l) => (
             <a
               key={l.href}

@@ -14,10 +14,12 @@ export function Hero() {
       ref={ref}
       className="relative min-h-[100svh] w-full overflow-hidden bg-graphite"
     >
-      <motion.div style={{ scale, y }} className="absolute inset-0">
+      <motion.div style={{ scale, y }} className="absolute inset-0" aria-hidden="true">
         <img
           src="/pipes.jpeg"
-          alt="Mridu Industries branded PVC pipes"
+          alt="Stack of MRIDU branded PVC pipes manufactured in Bhiwadi, Rajasthan"
+          fetchPriority="high"
+          decoding="async"
           className="h-full w-full object-cover opacity-60"
           width={1920}
           height={1080}

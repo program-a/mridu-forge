@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Disallow: /api/
+
+# Crawl-delay friendly
+Crawl-delay: 1
+
+Sitemap: https://mriduindustries.com/sitemap.xml

@@ -4,7 +4,6 @@ import { Hero } from "@/components/site/Hero";
 import { About } from "@/components/site/About";
 import { Products } from "@/components/site/Products";
 import { Infrastructure } from "@/components/site/Infrastructure";
-import { Vision } from "@/components/site/Vision";
 import { WhyUs } from "@/components/site/WhyUs";
 import { Contact } from "@/components/site/Contact";
 import {
@@ -141,18 +140,12 @@ export const Route = createFileRoute("/")({
                 {
                   "@type": "ListItem",
                   position: 5,
-                  name: "Vision",
-                  item: `${SITE_URL}#vision`,
-                },
-                {
-                  "@type": "ListItem",
-                  position: 6,
                   name: "Why Choose Us",
                   item: `${SITE_URL}#why`,
                 },
                 {
                   "@type": "ListItem",
-                  position: 7,
+                  position: 6,
                   name: "Contact",
                   item: `${SITE_URL}#contact`,
                 },
@@ -220,7 +213,6 @@ function Index() {
       <About />
       <Products />
       <Infrastructure />
-      <Vision />
       <WhyUs />
       <Contact />
       <SiteFooter />

@@ -7,6 +7,21 @@ const strengths = [
   "Customer-centric approach",
 ];
 
+const missionPoints = [
+  "To manufacture high-quality PVC pipes and fittings that meet industry standards",
+  "To support farmers and builders with reliable and cost-effective solutions",
+  "To maintain excellence in production, quality control, and customer service",
+  "To continuously upgrade technology and processes for better efficiency",
+];
+
+const visionPoints = [
+  "Continuously adopt advanced manufacturing technologies to enhance product performance and efficiency",
+  "Expand our presence across India while maintaining strong roots in North India",
+  "Set benchmarks in quality standards, ensuring every product reflects consistency and reliability",
+  "Build a brand that customers associate with trust, value, and long-term dependability",
+  "Contribute to sustainable practices by promoting efficient use of resources and minimizing waste in production",
+];
+
 export function About() {
   return (
     <section id="about" className="relative py-32 md:py-48 bg-graphite overflow-hidden">
@@ -75,6 +90,76 @@ export function About() {
               <p className="text-muted-foreground text-lg leading-relaxed pt-2">
                 At Mridu Industries, we believe in building long-term relationships by delivering
                 products that customers can rely on for years.
+              </p>
+            </Reveal>
+          </div>
+        </div>
+
+        <div className="mt-24 md:mt-32 pt-24 border-t border-hairline space-y-24 md:space-y-32">
+          <div>
+            <Reveal delay={0.05}>
+              <div className="text-xs tracking-[0.4em] text-electric uppercase mb-8">
+                What we commit to
+              </div>
+            </Reveal>
+            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-px bg-hairline border border-hairline rounded-2xl overflow-hidden">
+              {missionPoints.map((m, i) => (
+                <Reveal key={m} delay={0.08 + i * 0.07}>
+                  <li className="group relative h-full bg-charcoal/60 p-7 md:p-8 flex flex-col gap-5">
+                    <span className="font-display text-electric text-sm tracking-[0.3em]">
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                    <span className="font-display text-lg md:text-xl tracking-tight leading-snug">
+                      {m}
+                    </span>
+                    <span className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-electric to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-700" />
+                  </li>
+                </Reveal>
+              ))}
+            </ul>
+          </div>
+
+          <div className="space-y-8">
+            <Reveal delay={0.05}>
+              <p className="text-muted-foreground text-lg leading-relaxed">
+                At Mridu Industries, our aim is to become one of India&apos;s most trusted and
+                respected manufacturers of PVC pipes and fittings, known for our unwavering
+                commitment to quality, durability, and customer satisfaction.
+              </p>
+            </Reveal>
+            <Reveal delay={0.1}>
+              <p className="text-muted-foreground text-lg leading-relaxed">
+                We aim to play a vital role in strengthening the backbone of the nation—its
+                agriculture and infrastructure sectors—by providing reliable piping solutions that
+                support efficient water management and long-lasting construction.
+              </p>
+            </Reveal>
+
+            <Reveal delay={0.15}>
+              <div className="pt-2">
+                <div className="text-xs tracking-[0.4em] text-copper uppercase">
+                  Beyond scale, we strive to
+                </div>
+                <ul className="mt-6 space-y-px bg-hairline border border-hairline rounded-2xl overflow-hidden">
+                  {visionPoints.map((v, i) => (
+                    <Reveal key={v} delay={0.2 + i * 0.05}>
+                      <li className="group relative bg-charcoal/60 p-6 md:p-7 flex items-start gap-5">
+                        <span className="font-display text-copper text-sm tracking-[0.3em] shrink-0 mt-1">
+                          {String(i + 1).padStart(2, "0")}
+                        </span>
+                        <span className="text-base md:text-lg leading-relaxed">{v}</span>
+                      </li>
+                    </Reveal>
+                  ))}
+                </ul>
+              </div>
+            </Reveal>
+
+            <Reveal delay={0.45}>
+              <p className="text-muted-foreground text-lg leading-relaxed pt-2">
+                Through innovation, integrity, and dedication, we aim for Mridu Industries to be a
+                company that not only meets industry demands but shapes the future of piping
+                solutions in India.
               </p>
             </Reveal>
           </div>

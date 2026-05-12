@@ -98,9 +98,7 @@ export function About() {
         <div className="mt-24 md:mt-32 pt-24 border-t border-hairline space-y-24 md:space-y-32">
           <div>
             <Reveal delay={0.05}>
-              <div className="text-xs tracking-[0.4em] text-electric uppercase mb-8">
-                What we commit to
-              </div>
+              <div className="text-xs tracking-[0.4em] text-electric uppercase mb-8">Mission</div>
             </Reveal>
             <ul className="grid grid-cols-1 sm:grid-cols-2 gap-px bg-hairline border border-hairline rounded-2xl overflow-hidden">
               {missionPoints.map((m, i) => (
@@ -121,13 +119,16 @@ export function About() {
 
           <div className="space-y-8">
             <Reveal delay={0.05}>
+              <div className="text-xs tracking-[0.4em] text-copper uppercase mb-8">Vision</div>
+            </Reveal>
+            <Reveal delay={0.08}>
               <p className="text-muted-foreground text-lg leading-relaxed">
-                At Mridu Industries, our aim is to become one of India&apos;s most trusted and
+                At Mridu Industries, our vision is to become one of India&apos;s most trusted and
                 respected manufacturers of PVC pipes and fittings, known for our unwavering
                 commitment to quality, durability, and customer satisfaction.
               </p>
             </Reveal>
-            <Reveal delay={0.1}>
+            <Reveal delay={0.12}>
               <p className="text-muted-foreground text-lg leading-relaxed">
                 We aim to play a vital role in strengthening the backbone of the nation—its
                 agriculture and infrastructure sectors—by providing reliable piping solutions that
@@ -135,11 +136,11 @@ export function About() {
               </p>
             </Reveal>
 
-            <Reveal delay={0.15}>
+            <Reveal delay={0.16}>
               <div className="pt-2">
-                <div className="text-xs tracking-[0.4em] text-copper uppercase">
-                  Beyond scale, we strive to
-                </div>
+                <p className="text-muted-foreground text-base md:text-lg leading-relaxed">
+                  Our vision extends beyond growth in scale. We strive to:
+                </p>
                 <ul className="mt-6 space-y-px bg-hairline border border-hairline rounded-2xl overflow-hidden">
                   {visionPoints.map((v, i) => (
                     <Reveal key={v} delay={0.2 + i * 0.05}>
@@ -157,7 +158,7 @@ export function About() {
 
             <Reveal delay={0.45}>
               <p className="text-muted-foreground text-lg leading-relaxed pt-2">
-                Through innovation, integrity, and dedication, we aim for Mridu Industries to be a
+                Through innovation, integrity, and dedication, we envision Mridu Industries as a
                 company that not only meets industry demands but shapes the future of piping
                 solutions in India.
               </p>
